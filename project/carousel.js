@@ -109,7 +109,6 @@ function wrapBeforeAnim(to) {
 // computed based on the logical index within the original list.
 function updateOpacity(immediate = false) {
   const len = originalItems.length;
-  // logicalLeft indexes into the original list, derived from the extended index
   const logicalLeft = modulo(index - CLONE_COUNT, len);
   const centreA = logicalLeft;
   const centreB = modulo(logicalLeft + 1, len);
@@ -119,17 +118,19 @@ function updateOpacity(immediate = false) {
   items.forEach(el => {
     const oi = Number(el.dataset.oi);
     let target;
-    if (oi === centreA || oi === centreB) {
-      target = 1;
-    } else if (oi === nearL || oi === nearR) {
-      target = 0.4;
-    } else {
-      target = 0.15;
-    }
+    if (oi === centreA || oi === centreB) target = 1;
+    else if (oi === nearL || oi === nearR) target = 0.4;
+    else target = 0.15;
+
     if (immediate) {
       gsap.set(el, { opacity: target });
     } else {
-      opSetters.get(el)(target);
+      gsap.to(el, {
+        opacity: target,
+        duration: 0.35,
+        ease: 'power3.out',
+        overwrite: 'auto'
+      });
     }
   });
 }
