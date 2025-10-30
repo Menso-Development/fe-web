@@ -5,18 +5,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-    // =================================================================
-    // Lenis Smooth Scroll Initialization
-    // =================================================================
-    
-    const lenis = new Lenis({
-        duration: 1.05,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smoothWheel: true,
-        smoothTouch: false,
-        touchMultiplier: 2,
-    });
-
     // Интеграция Lenis с GSAP ScrollTrigger
     lenis.on('scroll', ScrollTrigger.update);
 
