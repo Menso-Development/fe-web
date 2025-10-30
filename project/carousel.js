@@ -80,15 +80,28 @@ items.forEach(el => {
 function normalize(to) {
   const len = originalItems.length;
   let n = to;
+  const step = getStep();
+
   if (n < CLONE_COUNT) {
     n += len;
-    // Immediately set the track position to the teleported location
-    gsap.set(track, { x: -getStep() * n });
+    gsap.set(track, { x: -step * n });
+    index = n;
+    updateOpacity(true);
   } else if (n >= len + CLONE_COUNT) {
     n -= len;
-    gsap.set(track, { x: -getStep() * n });
+    gsap.set(track, { x: -step * n });
+    index = n;
+    updateOpacity(true);
   }
   return n;
+}
+
+function wrapBeforeAnim(to) {
+  const len = originalItems.length;
+  let t = to;
+  if (t < CLONE_COUNT) t += len;
+  else if (t >= len + CLONE_COUNT) t -= len;
+  return t;
 }
 
 // Update opacity for all items. Central pair appears with opacity 1, their
@@ -126,6 +139,8 @@ function updateOpacity(immediate = false) {
 // minimum click interval and skip if an animation is already running.
 function go(to, opts = {}) {
   const immediate = !!opts.immediate;
+
+  // мгновенная установка (как у тебя и было)
   if (immediate) {
     if (anim) anim.kill();
     isAnimating = false;
@@ -143,24 +158,51 @@ function go(to, opts = {}) {
   isAnimating = true;
   if (anim) anim.kill();
 
-  const target = to;
+  const step = getStep();
+  const len  = originalItems.length;
+  const leftBound  = CLONE_COUNT;
+  const rightBound = CLONE_COUNT + len - 1;
+
+  // хотим сдвинуться относительно текущего
+  let target = to;
+
+  // ДВИЖЕНИЕ ПО ГРАНИЦЕ:
+  // Если выходим за левую границу — сперва телепортируемся на +len (вправо) без анимации,
+  // чтобы цель стала ближней, а не через весь круг.
+  if (target < leftBound) {
+    const preIndex = index + len;              // визуально та же пара
+    gsap.set(track, { x: -step * preIndex });  // мгновенный «перепрыг»
+    index  = preIndex;
+    target = to + len;                         // делаем один шаг влево, но уже внутри окна
+  }
+  // Аналогично для правой границы (если идём вправо из правого края)
+  else if (target > rightBound) {
+    const preIndex = index - len;
+    gsap.set(track, { x: -step * preIndex });
+    index  = preIndex;
+    target = to - len;
+  }
+
+  // Короткая анимация ровно на один шаг
   anim = gsap.to(track, {
-    x: -getStep() * target,
+    x: -step * target,
     duration: SLIDE_DURATION,
     ease: 'power2.out',
-    onUpdate: () => {
-      updateOpacity(false);
-    },
+    onUpdate: () => updateOpacity(false),
     onComplete: () => {
-      index = normalize(target);
+      // фиксируем точный индекс и позицию на сетку, без пост-нормализаций и оборотов
+      index = target;
+      gsap.set(track, { x: -Math.round(step * index) });
       updateOpacity(true);
       isAnimating = false;
     }
   });
 
+  // актуализируем «текущий» индекс для updateOpacity во время анимации
   index = target;
   updateOpacity(false);
 }
+
 
 // Click handlers for navigation buttons
 btnPrev && btnPrev.addEventListener('click', () => go(index - 1));
