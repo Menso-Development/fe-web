@@ -355,121 +355,169 @@
 
     <!-- Projects Section -->
     <section class="projects-section" id="projekte">
-        <div class="projects-container">
-            <div class="projects-heading">
-                <h2 class="projects-title">Projekte</h2>
-                <div class="projects-arrows">
-                    <button class="arrow-btn" aria-label="Previous">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M12.02 4.94L7.43 9.53L12.02 14.12" stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
+        <div class="project-block">
+            <div class="project-block-header">
+                <h2>Projekte</h2>
+                <div class="buttons">
+                    <button class="nav-btn prev" data-prev>
+                        <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.66455 13.95L1.23122 8.51667C0.58955 7.875 0.58955 6.825 1.23122 6.18333L6.66455 0.75" stroke="#1E2530" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                
                     </button>
-                    <button class="arrow-btn" aria-label="Next">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M7.43 4.94L12.02 9.53L7.43 14.12" stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
+                    <button class="nav-btn next" data-next>
+                        <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.75 13.95L6.18333 8.51667C6.825 7.875 6.825 6.825 6.18333 6.18333L0.75 0.75" stroke="#1E2530" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                
                     </button>
                 </div>
             </div>
-
-            <div class="projects-blocks">
-                <!-- Project 1 (opacity: 0.25) -->
-                <div class="project-card faded">
-                    <div class="project-header">
-                        <h3>Investor Demo</h3>
-                        <div class="project-tags">
-                            <span class="project-tag">FinTech</span>
-                            <span class="project-tag">AI</span>
-                            <span class="project-tag">Education</span>
-                        </div>
-                    </div>
-                    <div class="project-photo"></div>
-                    <div class="project-footer">
-                        <div class="project-user-info">
-                            <div class="user-photo"></div>
-                            <div class="user-text">
-                                <h4>Emily Carter</h4>
-                                <p>Tolles Projekt, sehr professionell!</p>
+            
+            <div class="projects-viewport">
+                <div class="projects-track">
+                    <div class="projects-list">
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h2>Project 1</h2>
+                                <ul>
+                                    <li>FinTech</li>
+                                    <li>AI</li>
+                                    <li>Education</li>
+                                </ul>
+                            </div>
+                            <img class="project-photo" src="img/project-photo.png" alt="Project 1">
+                            <div class="project-footer">
+                                <div class="project-user-info">
+                                    <img src="img/user-photo.png" alt="User 1">
+                                    <div class="user-info">
+                                        <span class="user-name">Emily Carter</span>
+                                        <span class="user-text">Tolles Projekt, sehr professionell!</span>
+                                    </div>
+                                </div>
+                                <span class="duration">3 Wochen</span>
                             </div>
                         </div>
-                        <span class="project-duration">3 Wochen</span>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Investor Demo</h3>
-                        <div class="project-tags">
-                            <span class="project-tag">FinTech</span>
-                            <span class="project-tag">AI</span>
-                            <span class="project-tag">Education</span>
-                        </div>
-                    </div>
-                    <div class="project-photo active"></div>
-                    <div class="project-footer">
-                        <div class="project-user-info">
-                            <div class="user-photo"></div>
-                            <div class="user-text">
-                                <h4>Emily Carter</h4>
-                                <p>Tolles Projekt, sehr professionell!</p>
+    
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h2>Project 2</h2>
+                                <ul>
+                                    <li>FinTech</li>
+                                    <li>AI</li>
+                                    <li>Education</li>
+                                </ul>
+                            </div>
+                            <img class="project-photo" src="img/project-photo.png" alt="Project 1">
+                            <div class="project-footer">
+                                <div class="project-user-info">
+                                    <img src="img/user-photo.png" alt="User 1">
+                                    <div class="user-info">
+                                        <span class="user-name">Emily Carter</span>
+                                        <span class="user-text">Tolles Projekt, sehr professionell!</span>
+                                    </div>
+                                </div>
+                                <span class="duration">3 Wochen</span>
                             </div>
                         </div>
-                        <span class="project-duration">3 Wochen</span>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Investor Demo</h3>
-                        <div class="project-tags">
-                            <span class="project-tag">FinTech</span>
-                            <span class="project-tag">AI</span>
-                            <span class="project-tag">Education</span>
-                        </div>
-                    </div>
-                    <div class="project-photo"></div>
-                    <div class="project-footer">
-                        <div class="project-user-info">
-                            <div class="user-photo"></div>
-                            <div class="user-text">
-                                <h4>Emily Carter</h4>
-                                <p>Tolles Projekt, sehr professionell!</p>
+    
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h2>Project 3</h2>
+                                <ul>
+                                    <li>FinTech</li>
+                                    <li>AI</li>
+                                    <li>Education</li>
+                                </ul>
+                            </div>
+                            <img class="project-photo" src="img/project-photo.png" alt="Project 1">
+                            <div class="project-footer">
+                                <div class="project-user-info">
+                                    <img src="img/user-photo.png" alt="User 1">
+                                    <div class="user-info">
+                                        <span class="user-name">Emily Carter</span>
+                                        <span class="user-text">Tolles Projekt, sehr professionell!</span>
+                                    </div>
+                                </div>
+                                <span class="duration">3 Wochen</span>
                             </div>
                         </div>
-                        <span class="project-duration">3 Wochen</span>
-                    </div>
-                </div>
-
-                <!-- Project 4 (opacity: 0.25) -->
-                <div class="project-card faded">
-                    <div class="project-header">
-                        <h3>Investor Demo</h3>
-                        <div class="project-tags">
-                            <span class="project-tag">FinTech</span>
-                            <span class="project-tag">AI</span>
-                            <span class="project-tag">Education</span>
-                        </div>
-                    </div>
-                    <div class="project-photo active"></div>
-                    <div class="project-footer">
-                        <div class="project-user-info">
-                            <div class="user-photo"></div>
-                            <div class="user-text">
-                                <h4>Emily Carter</h4>
-                                <p>Tolles Projekt, sehr professionell!</p>
+    
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h2>Project 4</h2>
+                                <ul>
+                                    <li>FinTech</li>
+                                    <li>AI</li>
+                                    <li>Education</li>
+                                </ul>
+                            </div>
+                            <img class="project-photo" src="img/project-photo.png" alt="Project 1">
+                            <div class="project-footer">
+                                <div class="project-user-info">
+                                    <img src="img/user-photo.png" alt="User 1">
+                                    <div class="user-info">
+                                        <span class="user-name">Emily Carter</span>
+                                        <span class="user-text">Tolles Projekt, sehr professionell!</span>
+                                    </div>
+                                </div>
+                                <span class="duration">3 Wochen</span>
                             </div>
                         </div>
-                        <span class="project-duration">3 Wochen</span>
+    
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h2>Project 5</h2>
+                                <ul>
+                                    <li>FinTech</li>
+                                    <li>AI</li>
+                                    <li>Education</li>
+                                </ul>
+                            </div>
+                            <img class="project-photo" src="img/project-photo.png" alt="Project 1">
+                            <div class="project-footer">
+                                <div class="project-user-info">
+                                    <img src="img/user-photo.png" alt="User 1">
+                                    <div class="user-info">
+                                        <span class="user-name">Emily Carter</span>
+                                        <span class="user-text">Tolles Projekt, sehr professionell!</span>
+                                    </div>
+                                </div>
+                                <span class="duration">3 Wochen</span>
+                            </div>
+                        </div>
+    
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h2>Project 6</h2>
+                                <ul>
+                                    <li>FinTech</li>
+                                    <li>AI</li>
+                                    <li>Education</li>
+                                </ul>
+                            </div>
+                            <img class="project-photo" src="img/project-photo.png" alt="Project 1">
+                            <div class="project-footer">
+                                <div class="project-user-info">
+                                    <img src="img/user-photo.png" alt="User 1">
+                                    <div class="user-info">
+                                        <span class="user-name">Emily Carter</span>
+                                        <span class="user-text">Tolles Projekt, sehr professionell!</span>
+                                    </div>
+                                </div>
+                                <span class="duration">3 Wochen</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <a href="#audit" class="projects-button">
+    
+            <a href="#audit" class="hero-button">
                 <span>Audit buchen</span>
             </a>
         </div>
+    
+          
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="js/carousel.js"></script>
     </section>
 
     <!-- Pricing Section (Blue Gradient) -->

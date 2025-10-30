@@ -2313,3 +2313,216 @@ body::before {
     transform: translateY(-2px);
     box-shadow: 0px 15px 15px rgba(30, 37, 48, 0.08);
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.project-block {
+    display: flex;
+    flex-direction: column;
+
+    width: 1160px;
+    justify-content: center;
+
+    margin: 0 auto;
+
+    gap: 50px;
+    overflow: visible; 
+}
+
+.project-block-header{
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-block-header h2 {
+    font-size: 36px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.nav-btn{
+    cursor: pointer;
+
+    width: 50px;
+    height: 50px;
+
+    background: #FAFAFA;
+    border: 1px solid rgb(30, 37, 48, .05);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.projects-viewport{
+    width: 1440px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    flex: 0 0 auto; 
+    box-sizing: border-box;
+}
+
+.projects-track{
+    padding:0 137.5px;
+    will-change:transform;
+}
+
+.projects-list{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.project-item{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    width: 570px;
+    height: 480px;
+
+    padding: 25px;
+
+    background: #FAFAFA;
+    border: 1px solid rgba(30, 37, 48, 0.05);
+    border-radius: 25px;
+}
+
+.project-header{
+    align-items: center;
+    justify-content: space-between;
+
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    width: 100%;
+}
+
+.project-header h2{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1E2530;
+}
+
+.project-header ul{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.project-header ul li {
+    font-size: 12px;
+    line-height: 20px;
+    list-style: none;
+    padding: 5px 15px;
+    color: #FFFFFF;
+    border-radius: 9999px;
+
+    cursor: default;
+
+    background: linear-gradient(115.65deg, #038FFE -34.16%, #0167FF 75.34%);
+    border: 2px solid #3C9CFE;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.project-photo{
+    width: 520px;
+    height: 300px;
+    background: #FFFFFF;
+    border-radius: 15px;
+}
+
+.project-footer{
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-footer .project-user-info{
+    display: flex;
+    flex-direction: row;
+
+    gap: 15px;
+}
+
+.project-footer .project-user-info .user-info {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 20px;
+    gap: 10px;
+}
+
+.project-footer .project-user-info .user-info .user-name {
+    font-size: 16px;
+}
+
+.project-footer .project-user-info .user-info .user-text {
+    color: rgb(30, 37, 48, .6);
+    font-size: 16px;
+}
+
+
+.hero-button {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;;
+
+    margin: 0 auto;
+
+    width: 146px;
+    height: 50px;
+
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(115.65deg, #038FFE -34.16%, #0167FF 75.34%);
+    box-shadow: 0px 15px 15px rgba(30, 37, 48, 0.05);
+    
+    border: 2px solid #3C9CFE;
+    border-radius: 9999px;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+}
+
+.hero-button span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
